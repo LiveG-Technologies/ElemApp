@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: rgb(100, 122, 255);
+    background: -webkit-linear-gradient(bottom, rgba(100, 122, 255, 1) 0%, rgba(104, 202, 242, 1) 100%);
+    background: -o-linear-gradient(bottom, rgba(100, 122, 255, 1) 0%, rgba(104, 202, 242, 1) 100%);
+    background: linear-gradient(to top, rgba(100, 122, 255, 1) 0%, rgba(104, 202, 242, 1) 100%);
+    color: white;
+    font-family: "Roboto", "Piboto", sans-serif;
+    text-align: center;
+    padding-top: 25vh;
+    transition: padding-top 2s;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
