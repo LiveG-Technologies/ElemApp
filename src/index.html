@@ -2,12 +2,57 @@
 <html>
     <head>
         <title>ElemApp App Maker</title>
+        <link rel="shortcut icon" href="logog.png">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     </head>
     <body>
-        <h1>ElemApp</h1>
-        <p>Coming soon! It's going to be great.</p>
+        <header>
+            <a href="index.html"><img src="logow.png" class="headerLogo" /></a>
+            <span class="headerItem">ElemApp</span>
+            <span class="headerRight showDesktop">
+                <a href="index.html#" class="headerItem">Home</a>
+                <a href="index.html#about" class="headerItem">About</a>
+                <a href="index.html#tryit" class="headerItem">Try It</a>
+            </span>
+            <span class="headerRight showMobile">
+                <span onclick="openMenu();" class="headerItem" id="menuControls"><i class="fas fa-bars"></i></span>
+            </span>
+        </header>
+        <div onclick="closeMenu();" id="menuBackground" class="showMobile"></div>
+        <div id="menu" class="showMobile">
+            <a onclick="closeMenu();" href="index.html#" class="menuItem">Home</a>
+            <a onclick="closeMenu();" href="index.html#about" class="menuItem">About</a>
+            <a onclick="closeMenu();" href="index.html#tryit" class="menuItem">Try It</a>
+        </div>
+        <main>
+            <h1>ElemApp</h1>
+            <p>The Progressive Web App maker that doesn't require a lot of coding.</p>
+        </main>
+        <section>
+            <a name="about" class="anchor"></a>
+            <h2>About</h2>
+            <p>
+                ElemApp is the tool that allows you to create your own Progressive Web Apps. And with little or no coding.
+                The apps you create will work for desktop, mobile, tablets and any aspect ratios!
+            </p>
+            <h3>What is a Progressive Web App?</h3>
+            <p>
+                A Progressive Web App is a website that is designed to look and behave like a desktop or mobile app, and
+                is mainly accessible through the internet. Progressive Web Apps can also have shortcuts added to the
+                homescreens of many devices, allowing for a more native experience to the user.
+            </p>
+        </section>
+        <section>
+            <a name="tryit" class="anchor"></a>
+            <h2>Try It</h2>
+            <p>
+                ElemApp is currently in development. You can still look at the <a href="https://github.com/LiveG-Technologies/ElemApp" target="_blank">GitHub Repository</a>!
+            </p>
+        </section>
     </body>
+    <script src="script.js"></script>
 </html>

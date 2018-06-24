@@ -7,11 +7,39 @@ body {
     background: -webkit-linear-gradient(bottom, rgba(100, 122, 255, 1) 0%, rgba(104, 202, 242, 1) 100%);
     background: -o-linear-gradient(bottom, rgba(100, 122, 255, 1) 0%, rgba(104, 202, 242, 1) 100%);
     background: linear-gradient(to top, rgba(100, 122, 255, 1) 0%, rgba(104, 202, 242, 1) 100%);
+    background-attachment: fixed;
     color: white;
     font-family: "Roboto", "Piboto", sans-serif;
     text-align: center;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    text-align: left;
+    font-size: 30px;
+    transition: background-color 1s;
+}
+
+main {
+    padding: 10px;
     padding-top: 25vh;
     transition: padding-top 2s;
+    height: 80vh;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
 }
 
 h1 {
@@ -20,4 +48,103 @@ h1 {
 
 p {
     font-size: 20px;
+}
+
+a {
+    color: rgb(100, 122, 255);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+}
+
+.headerLogo {
+    position: relative;
+    width: 60px;
+    float: left;
+}
+
+.headerItem {
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 10px;
+    transition: background-color 0.5s;
+    text-decoration: none!important;
+}
+
+a.headerItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.headerRight {
+    float: right;
+    margin-right: 20px;
+}
+
+#menuBackground {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: -75vw;
+    width: 75vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(100, 122, 255);
+    transition: left 0.5s;
+}
+
+.menuItem {
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin: 10px;
+    transition: background-color 0.5s;
+    text-align: left;
+    text-decoration: none!important;
+}
+
+a.menuItem:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.showDesktop {
+    display: unset;
+}
+
+.showMobile {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .showDesktop {
+        display: none;
+    }
+
+    .showMobile {
+        display: unset;
+    }
 }
