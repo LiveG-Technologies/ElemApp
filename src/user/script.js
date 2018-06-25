@@ -44,3 +44,13 @@ function checkScroll() {
 }
 
 $(window).scroll(checkScroll);
+
+function openMenu() {
+    $("#menu").css("left", "0");
+    $("#menuBackground").fadeIn(1000);
+}
+
+function closeMenu() {
+    $("#menu").css("left", "-75vw");
+    $("#menuBackground").fadeOut(1000);
+}

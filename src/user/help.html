@@ -25,9 +25,9 @@
     <body>
         <header>
             <a href="index.html"><img src="../logow.png" class="headerLogo" /></a>
-            <span class="headerItem">ElemApp</span>
+            <span class="headerItem">ElemApp Help</span>
             <span class="headerRight showDesktop">
-                <a href="help.html" class="headerItem">Help</a>
+                <a href="index.html" class="headerItem">Dashboard</a>
                 <a href="javascript:signOut();" class="headerItem">Sign Out</a>
             </span>
             <span class="headerRight showMobile">
@@ -36,14 +36,26 @@
         </header>
         <div onclick="closeMenu();" id="menuBackground" class="showMobile"></div>
         <div id="menu" class="showMobile">
-            <a onclick="closeMenu();" href="help.html" class="menuItem">Help</a>
+            <a onclick="closeMenu();" href="index.html" class="menuItem">Dashboard</a>
             <a onclick="closeMenu();" href="javascript:signOut();" class="menuItem">Sign Out</a>
         </div>
         <main class="dash">
-            <h1>Coming Soon!</h1>
-            <p>We're still working on it!</p>
-            <p>User ID: <code class="myuid">null</code></p>
-            <p>Developer Name: <code class="myname">null</code></p>
+            <h2>About</h2>
+            <p>
+                ElemApp is the tool that allows you to create your own Progressive Web Apps. And with little or no coding.
+                The apps you create will work for desktop, mobile, tablets and any aspect ratios!
+            </p>
+            <h3>What is a Progressive Web App?</h3>
+            <p>
+                A Progressive Web App is a website that is designed to look and behave like a desktop or mobile app, and
+                is mainly accessible through the internet. Progressive Web Apps can also have shortcuts added to the
+                homescreens of many devices, allowing for a more native experience to the user.
+            </p>
+            <a name="tryit" class="anchor"></a>
+            <h2>Try It</h2>
+            <p>
+                Just go to the <a href="index.html" target="_blank">Dashboard</a>!
+            </p>
         </main>
     </body>
     <script src="script.js"></script>

@@ -35,6 +35,17 @@ main.only {
     height: unset;
 }
 
+main.dash {
+    position: relative;
+    top: 80px;
+    height: calc(100vh - 100px);
+    padding: 10px;
+    background-color: white;
+    color: black;
+    overflow-y: auto;
+    text-align: left;
+}
+
 section {
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
@@ -178,6 +189,7 @@ input:focus {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99998;
 }
 
 #menu {
@@ -189,6 +201,7 @@ input:focus {
     overflow: auto;
     background-color: rgb(100, 122, 255);
     transition: left 0.5s;
+    z-index: 99999;
 }
 
 .menuItem {
