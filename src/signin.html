@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ElemApp App Maker</title>
+        <link rel="shortcut icon" href="logog.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA9_B5pM_qMY98UIGNDy5xac6g4_pzpjD8",
+                authDomain: "elemapp-pwa.firebaseapp.com",
+                databaseURL: "https://elemapp-pwa.firebaseio.com",
+                projectId: "elemapp-pwa",
+                storageBucket: "elemapp-pwa.appspot.com",
+                messagingSenderId: "420105195694"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="logow.png" class="headerLogo" /></a>
+            <span class="headerItem">ElemApp</span>
+        </header>
+        <main class="only">
+            <div id="signIn">
+                <h1>Sign into ElemApp</h1>
+                <form>
+                    <input type="email" placeholder="E-mail" id="user"></input><br>
+                    <input type="password" placeholder="Password" id="pass"></input>
+                </form><br>
+                <button onclick="window.location.href = 'index.html';" class="bad">Cancel</button><button onclick="signIn();">Sign In</button><button class="secondary" onclick="signOutBefore();">Sign Up</button><br>
+            </div>
+            <div id="signUp">
+                <h1>Sign up for ElemApp</h1>
+                <form autocomplete="off"><input placeholder="Developer Name" id="name" autocomplete="off"></input></form><br>
+                <button class="bad" onclick="reset();">Cancel</button><button onclick="signUp();">Sign Up</button><br>
+            </div>
+            <div id="notsupported">
+                <h1>Sorry! JS not supported.</h1>
+                <h2>JavaScript is not supported on this device. If you've turned it off, please turn it on!</h2>
+            </div>
+            <p id="error"></p>
+            <div id="pend"></div>
+        </main>
+    </body>
+    <script src="signin.js"></script>
+</html>

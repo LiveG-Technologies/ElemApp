@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ElemApp App Maker</title>
+        <link rel="shortcut icon" href="../logog.png">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA9_B5pM_qMY98UIGNDy5xac6g4_pzpjD8",
+                authDomain: "elemapp-pwa.firebaseapp.com",
+                databaseURL: "https://elemapp-pwa.firebaseio.com",
+                projectId: "elemapp-pwa",
+                storageBucket: "elemapp-pwa.appspot.com",
+                messagingSenderId: "420105195694"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="../logow.png" class="headerLogo" /></a>
+            <span class="headerItem">ElemApp</span>
+        </header>
+        <main class="only">
+            <h1>Coming Soon!</h1>
+            <p>We're still working on it!</p>
+            <p>User ID: <code class="myuid">null</code></p>
+            <button onclick="signOut();" class="bad">Sign Out</button>
+        </main>
+    </body>
+    <script src="script.js"></script>
+</html>
