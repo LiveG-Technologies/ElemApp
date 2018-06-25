@@ -94,3 +94,13 @@ input.addEventListener("keyup", function(event) {
         signIn();
     }
 });
+
+function checkScroll() {
+    if ($(this).scrollTop() > 100) {
+        $("header").css("background-color", "rgb(100, 122, 255)");
+    } else {
+        $("header").css("background-color", "transparent");
+    }
+}
+
+$(window).scroll(checkScroll);
