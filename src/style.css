@@ -239,6 +239,21 @@ a.menuItem:active {
     display: none;
 }
 
+.card {
+    display: inline-block;
+    width: calc(33.3% - 33px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card.inverse {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 700px) {
     section {
         margin-left: 20px;
@@ -251,5 +266,9 @@ a.menuItem:active {
 
     .showMobile {
         display: unset;
+    }
+
+    .card {
+        width: calc(100% - 30px);
     }
 }
