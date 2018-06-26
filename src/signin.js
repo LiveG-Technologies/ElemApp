@@ -22,10 +22,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (!signingUp) {
         change(user);
     } else {
-        firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/name").set(document.getElementById("name").value.substring(0, 20)).then(function() {
-            firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/ppic").set(0).then(function() {
-                window.location.href = "user/index.html";
-            });
+        firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/name").set(document.getElementById("name").value).then(function() {
+            window.location.href = "user/index.html";
         });
     }
 });

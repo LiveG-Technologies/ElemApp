@@ -240,6 +240,18 @@ a.menuItem:active {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
 .showDesktop {
     display: unset;
 }
