@@ -48,6 +48,8 @@ function prompt(content, title = "", callback = function() {}) {
     $("#alert").fadeIn(500);
     $("#menuBackground").fadeIn(1000);
 
+    $("#alertInput").focus();
+
     $("#alertInput").keypress(function (e) {
         if (e.keyCode == "13") {
             closeAlert(1);
