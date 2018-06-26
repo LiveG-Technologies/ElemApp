@@ -6,7 +6,7 @@ function addApp() {
 }
 
 function deleteApp(key) {
-    firebase.database().ref("users/" + currentUid + "/apps/" + key).delete();
+    firebase.database().ref("users/" + currentUid + "/apps/" + key).set(null);
 }
 
 firebase.database().ref("users/" + currentUid + "/apps").on("value", function(snapshot) {
