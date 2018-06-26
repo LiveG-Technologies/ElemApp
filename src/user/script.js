@@ -53,4 +53,5 @@ function openMenu() {
 function closeMenu() {
     $("#menu").css("left", "-75vw");
     $("#menuBackground").fadeOut(1000);
+    closeAlert();
 }

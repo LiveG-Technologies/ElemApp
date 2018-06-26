@@ -1,12 +1,19 @@
 function addApp() {
-    firebase.database().ref("users/" + currentUid + "/apps").push().set({
-        name: "Test App",
-        data: {}
+    prompt("Enter a name for your new app.", "New App", function(name) {
+        firebase.database().ref("users/" + currentUid + "/apps").push().set({
+            name: "Test App",
+            data: {}
+        });
     });
 }
 
 function deleteApp(key) {
-    firebase.database().ref("users/" + currentUid + "/apps/" + key).set(null);
+    badYesNo("Do you really want to delete this app? This action cannot be undone!", "Delete App", function(confirmDelete) {
+        if (confirmDelete) {
+            firebase.database().ref("users/" + currentUid + "/apps/" + key).set(null);
+        }
+    });
+    
 }
 
 firebase.auth().onAuthStateChanged(function(user) {

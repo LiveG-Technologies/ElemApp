@@ -240,6 +240,26 @@ a.menuItem:active {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+#alert {
+    position: fixed;
+    top: 25vh;
+    left: calc(33.3vw - 10px);
+    width: 33.3vw;
+    padding: 10px;
+    padding-top: 0;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    z-index: 99999;
+    display: none;
+}
+
+#alertInput {
+    width: calc(100% - 30px);
+    margin: 5px;
+}
+
 .left {
     text-align: left;
 }
@@ -285,6 +305,13 @@ a.menuItem:active {
 
 .card.inverse {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 800px) {
+    #alert {
+        left: calc(10vw - 10px);
+        width: 80vw;
+    }
 }
 
 @media (max-width: 700px) {
