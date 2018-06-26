@@ -1,9 +1,11 @@
 function addApp() {
     prompt("Enter a name for your new app.", "New App", function(name) {
-        firebase.database().ref("users/" + currentUid + "/apps").push().set({
-            name: "Test App",
-            data: {}
-        });
+        if (name != "") {
+            firebase.database().ref("users/" + currentUid + "/apps").push().set({
+                name: name,
+                data: {}
+            });
+        }
     });
 }
 

@@ -1,5 +1,5 @@
-
 var alertCallback = function() {};
+var inputEnterCallback = function() {};
 
 function alert(content, title = "") {
     if (title == "") {
@@ -47,6 +47,12 @@ function prompt(content, title = "", callback = function() {}) {
 
     $("#alert").fadeIn(500);
     $("#menuBackground").fadeIn(1000);
+
+    $("#alertInput").keypress(function (e) {
+        if (e.keyCode == "13") {
+            closeAlert(1);
+        }
+    });
 }
 
 function yesNo(content, title = "", callback = function() {}) {
@@ -98,6 +104,8 @@ function badYesNo(content, title = "", callback = function() {}) {
 }
 
 function closeAlert(doCallback = 0) {
+    inputEnterCallback = function() {};
+
     $("#alert").fadeOut(500);
     $("#menuBackground").fadeOut(1000);
 
