@@ -17,6 +17,7 @@ function change(user) {
 
 var currentUid = null;
 var signingUp = false;
+
 firebase.auth().onAuthStateChanged(function(user) {
     // Checks if user auth state has changed.
     if (!signingUp) {
@@ -48,6 +49,7 @@ function checkUsername() {
 
 function signIn() {
     document.getElementById("error").innerHTML = "";
+
     if (checkFields()) {
         firebase.auth().signInWithEmailAndPassword(document.getElementById("user").value, document.getElementById("pass").value).catch(function(error) {
             document.getElementById("error").innerHTML = "Oops! " + error.message.replace(/email/g, "e-mail").replace(/E-mail/g, "E-mail");
@@ -57,6 +59,7 @@ function signIn() {
 
 function signOutBefore() {
     document.getElementById("error").innerHTML = "";
+
     if (checkFields()) {
         document.getElementById("signIn").style.display = "none";
         document.getElementById("signUp").style.display = "unset";
@@ -65,6 +68,7 @@ function signOutBefore() {
 
 function signUp() {
     document.getElementById("error").innerHTML = "";
+
     if (checkUsername()) {
         firebase.auth().createUserWithEmailAndPassword(document.getElementById("user").value, document.getElementById("pass").value).then(function() {signingUp = true;}).catch(function(error) {
             document.getElementById("error").innerHTML = "Oops! " + error.message.replace(/email/g, "e-mail").replace(/E-mail/g, "E-mail");
@@ -88,6 +92,7 @@ var input = document.getElementById("pass");
 
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
+
     if (event.keyCode === 13) {
         signIn();
     }
