@@ -31,7 +31,7 @@ function prompt(content, title = "", callback = function() {}) {
             <p>` + content + `</p>
             <input id="alertInput"></input>
             <div class="right">
-                <button onclick="closeAlert(1);">OK</button>
+                <button onclick="closeAlert();" class="secondary">Cancel</button><button onclick="closeAlert(1);">OK</button>
             </div>
         `);
     } else {
@@ -40,7 +40,7 @@ function prompt(content, title = "", callback = function() {}) {
             <p>` + content + `</p>
             <input id="alertInput"></input>
             <div class="right">
-                <button onclick="closeAlert(1);">OK</button>
+                <button onclick="closeAlert();" class="secondary">Cancel</button><button onclick="closeAlert(1);">OK</button>
             </div>
         `);
     }
