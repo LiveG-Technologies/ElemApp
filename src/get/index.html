@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ElemApp App Maker</title>
+        <link rel="shortcut icon" href="../logog.png">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script src="../alerts.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA9_B5pM_qMY98UIGNDy5xac6g4_pzpjD8",
+                authDomain: "elemapp-pwa.firebaseapp.com",
+                databaseURL: "https://elemapp-pwa.firebaseio.com",
+                projectId: "elemapp-pwa",
+                storageBucket: "elemapp-pwa.appspot.com",
+                messagingSenderId: "420105195694"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <div onclick="closeMenu();" id="menuBackground" class="showMobile"></div>
+        <div id="alert"></div>
+        <main>
+            <h1>Get <span class="appName">this app</span> today.</h1>
+            <p>Made by <span class="appDev">an app developer</span>.</p>
+            <button>Get App</button>
+        </main>
+        <section class="center">
+            <a name="about" class="anchor"></a>
+            <h2>Made with ElemApp.</h2>
+            <p>
+                Start making your own app today at <a href="https://elemapp.cf" target="_blank">elemapp.cf</a>!
+            </p>
+        </section>
+        <footer>
+            Copyright &#169; LiveG. All Rights Reserved. <a href="https://liveg.tech" target="_blank" class="inherit">liveg.tech</a>
+        </footer>
+    </body>
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</html>

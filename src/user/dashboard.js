@@ -54,9 +54,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 
                     $("#apps").html($("#apps").html() + `
                         <div class="card inverse">
-                            <h2><a href="#" class="inherit">` + childData.name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `</a></h2>
+                            <h2><a href="editor/index.html?app=` + childKey + `" class="inherit">` + childData.name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `</a></h2>
                             <div class="right">
-                            <button class="bad" onclick="deleteApp('` + childKey + `');"><i class="fas fa-trash-alt"></i></button><button class="secondary">View</button><button>Edit</button>
+                            <button class="bad" onclick="deleteApp('` + childKey + `');"><i class="fas fa-trash-alt"></i></button><button onclick="window.open('../get/index.html?app=` + childKey + `&dev=` + currentUid + `', '_blank');" class="secondary">View</button><button onclick="window.location.href = 'editor/index.html?app=` + childKey + `';">Edit</button>
                             </div>
                         </div>
                 `);
