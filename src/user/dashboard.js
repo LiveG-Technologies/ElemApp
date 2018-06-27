@@ -1,9 +1,24 @@
 function addApp() {
     prompt("Enter a name for your new app.", "New App", function(name) {
         if (name != "") {
-            firebase.database().ref("users/" + currentUid + "/apps").push().set({
+            var newApp = firebase.database().ref("users/" + currentUid + "/apps").push();
+
+            newApp.set({
                 name: name,
-                data: {}
+            }).then(function() {
+                var newScreen = newApp.child("screens").push();
+
+                newScreen.set({
+                    name: "Home",
+                    elements: {},
+                    properties: {
+                        titleBar: true,
+                        titleText: "Home",
+                        backButton: false
+                    }
+                }).then(function() {
+                    newApp.child("defaultScreen").set(newScreen.getKey());
+                });
             });
         }
     });
