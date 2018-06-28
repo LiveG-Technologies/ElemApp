@@ -53,4 +53,10 @@ function openMenu() {
 function closeMenu() {
     $("#menu").css("left", "-75vw");
     $("#menuBackground").fadeOut(1000);
+    leftPanelShow = false;
+    rightPanelShow = false;
+}
+
+if (getURLParameter("app") == null)  {
+    window.location.href = "../index.html";
 }

@@ -241,6 +241,7 @@ a.menuItem:active {
 }
 
 #alert {
+    display: none;
     position: fixed;
     top: 25vh;
     left: calc(33.3vw - 10px);
@@ -252,12 +253,71 @@ a.menuItem:active {
     color: black;
     text-align: left;
     z-index: 99999;
-    display: none;
 }
 
 #alertInput {
     width: calc(100% - 30px);
     margin: 5px;
+}
+
+.panel {
+    width: 250px;
+    background-color: #e5e5e5;
+    text-align: left!important;
+}
+
+.panel.left {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: calc(100vh - 80px);
+}
+
+.panel.right {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    height: calc(100vh - 80px);
+}
+
+.panelTitle {
+    padding: 10px;
+    background-color: rgb(100, 122, 255);
+    font-size: 25px;
+}
+
+.panelContent {
+    padding: 10px;
+    color: black;
+    overflow: auto;
+    height: calc(100vh - 151px);
+    background-color: #e5e5e5;
+}
+
+.panelContent.half {
+    height: calc(50vh - 111px);
+}
+
+#panelClose {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+#bottomBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    padding-top: 10px;
+    background-color: rgb(100, 122, 255);
+    overflow-y: auto;
+    white-space: nowrap;
 }
 
 .left {

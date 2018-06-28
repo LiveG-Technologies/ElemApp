@@ -4,10 +4,12 @@
         <title>ElemApp App Maker</title>
         <link rel="shortcut icon" href="../../logog.png">
         <link rel="stylesheet" type="text/css" href="../../style.css">
+        <link rel="stylesheet" type="text/css" href="editor.css">
         <script src="../../alerts.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
         <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
         <script>
@@ -26,10 +28,12 @@
     <body>
         <header>
             <a href="../index.html"><img src="../../logow.png" class="headerLogo" /></a>
-            <span class="headerItem">ElemApp Editor</span>
+            <span class="headerItem">Editor</span>
             <span class="headerRight showDesktop">
+                <a href="../help/index.html" class="headerItem"><i class="fas fa-question"></i></a>
+                <a href="#" class="headerItem"><i class="fas fa-cog"></i></a>
+                <a href="#" class="headerItem">Screens</a>
                 <a href="../index.html" class="headerItem">Dashboard</a>
-                <a href="javascript:signOut();" class="headerItem">Sign Out</a>
             </span>
             <span class="headerRight showMobile">
                 <span onclick="openMenu();" class="headerItem" id="menuControls"><i class="fas fa-bars"></i></span>
@@ -37,15 +41,51 @@
         </header>
         <div onclick="closeMenu();" id="menuBackground" class="showMobile"></div>
         <div id="menu" class="showMobile">
+            <a onclick="closeMenu();" href="../help/index.html" class="menuItem">Help</a>
             <a onclick="closeMenu();" href="../index.html" class="menuItem">Dashboard</a>
             <a onclick="closeMenu();" href="javascript:signOut();" class="menuItem">Sign Out</a>
         </div>
         <div id="alert"></div>
+        <div id="panelClose" onclick="leftPanelShow = false; rightPanelShow = false; closeMenu();"><i class="fas fa-times"></i></div>
         <main class="dash">
             <div class="center">
-                <h1>Coming Soon!</h1>
+                <div id="device">
+                    <div id="app">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula mollis mi eget volutpat. Aliquam convallis nibh ut vulputate sodales. Nulla facilisi. Curabitur libero sapien, pellentesque vitae gravida interdum, viverra ut est. Donec consectetur ligula et arcu feugiat, eu sagittis ligula blandit. Fusce et facilisis quam. Fusce a mattis velit. In mauris ante, posuere sed consectetur id, fringilla non enim. Mauris vehicula lorem arcu. Aenean rhoncus vulputate neque, pharetra scelerisque augue blandit a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+
+                        Sed at elementum nibh. Etiam a mi quis purus convallis tristique. Pellentesque dolor risus, eleifend ac augue eu, malesuada ultricies urna. Sed felis justo, interdum vitae ultricies a, hendrerit eu dui. Vivamus cursus arcu id mi mattis, ac aliquam urna imperdiet. Aliquam sed ante metus. Duis ac magna vehicula, porttitor justo sed, viverra mauris. Aliquam at eros nec nisi scelerisque condimentum. In hac habitasse platea dictumst. Cras ex tellus, sollicitudin vel lorem vitae, malesuada tempor dolor. Etiam faucibus est et egestas vestibulum. Vestibulum iaculis, nisl ultrices ornare accumsan, tellus neque consequat nibh, in molestie justo odio eget sapien.
+                    </div>
+                </div>
             </div>
         </main>
+        <div class="panel left">
+            <div class="panelTitle">Toolbox</div>
+            <div id="toolbox" class="panelContent">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula mollis mi eget volutpat. Aliquam convallis nibh ut vulputate sodales. Nulla facilisi. Curabitur libero sapien, pellentesque vitae gravida interdum, viverra ut est. Donec consectetur ligula et arcu feugiat, eu sagittis ligula blandit. Fusce et facilisis quam. Fusce a mattis velit. In mauris ante, posuere sed consectetur id, fringilla non enim. Mauris vehicula lorem arcu. Aenean rhoncus vulputate neque, pharetra scelerisque augue blandit a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+
+                Sed at elementum nibh. Etiam a mi quis purus convallis tristique. Pellentesque dolor risus, eleifend ac augue eu, malesuada ultricies urna. Sed felis justo, interdum vitae ultricies a, hendrerit eu dui. Vivamus cursus arcu id mi mattis, ac aliquam urna imperdiet. Aliquam sed ante metus. Duis ac magna vehicula, porttitor justo sed, viverra mauris. Aliquam at eros nec nisi scelerisque condimentum. In hac habitasse platea dictumst. Cras ex tellus, sollicitudin vel lorem vitae, malesuada tempor dolor. Etiam faucibus est et egestas vestibulum. Vestibulum iaculis, nisl ultrices ornare accumsan, tellus neque consequat nibh, in molestie justo odio eget sapien.
+            </div>
+        </div>
+        <div class="panel right">
+            <div id="propertiesTitle" class="panelTitle">Properties</div>
+            <div id="properties" class="panelContent half">
+                Please select an element.
+            </div>
+            <div id="elementsTitle" class="panelTitle">Elements</div>
+            <div id="elements" class="panelContent half">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula mollis mi eget volutpat. Aliquam convallis nibh ut vulputate sodales. Nulla facilisi. Curabitur libero sapien, pellentesque vitae gravida interdum, viverra ut est. Donec consectetur ligula et arcu feugiat, eu sagittis ligula blandit. Fusce et facilisis quam. Fusce a mattis velit. In mauris ante, posuere sed consectetur id, fringilla non enim. Mauris vehicula lorem arcu. Aenean rhoncus vulputate neque, pharetra scelerisque augue blandit a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+
+                Sed at elementum nibh. Etiam a mi quis purus convallis tristique. Pellentesque dolor risus, eleifend ac augue eu, malesuada ultricies urna. Sed felis justo, interdum vitae ultricies a, hendrerit eu dui. Vivamus cursus arcu id mi mattis, ac aliquam urna imperdiet. Aliquam sed ante metus. Duis ac magna vehicula, porttitor justo sed, viverra mauris. Aliquam at eros nec nisi scelerisque condimentum. In hac habitasse platea dictumst. Cras ex tellus, sollicitudin vel lorem vitae, malesuada tempor dolor. Etiam faucibus est et egestas vestibulum. Vestibulum iaculis, nisl ultrices ornare accumsan, tellus neque consequat nibh, in molestie justo odio eget sapien.
+            </div>
+        </div>
+        <div id="bottomBar">
+            <button><i class="fas fa-cog"></i></button>
+            <button onclick="propertiesShow = true; rightPanelShow = true;"><i class="fas fa-sliders-h"></i></button>
+            <button><i class="fas fa-sitemap"></i></button>
+            <button onclick="propertiesShow = false; rightPanelShow = true;"><i class="fas fa-list-ul"></i></button>
+            <button onclick="leftPanelShow = true;"><i class="fas fa-plus"></i></button>
+        </div>
     </body>
     <script src="script.js"></script>
+    <script src="editor.js"></script>
 </html>

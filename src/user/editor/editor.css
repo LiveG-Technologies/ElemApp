@@ -1,0 +1,52 @@
+#device {
+    position: absolute;
+    top: 10vh;
+    left: calc(50vw - 20vh);
+    width: 40vh;
+    height: 65vh;
+    border-radius: 5vh;
+    background-color: #474747;
+}
+
+#app {
+    width: calc(100% - 40px);
+    height: calc(100% - 120px);
+    margin: 60px 20px 60px 20px;
+    background-color: white;
+    text-align: left;
+    overflow: auto;
+    cursor: default!important;
+}
+
+#bottomBar {
+    display: none;
+}
+
+.panel {
+    display: unset;
+}
+
+input.property {
+    width: calc(100% - 20px);
+    background-color: #f7f7f7;
+}
+
+@media (max-width: 800px) {
+    #device {
+        top: 5vh;
+    }
+
+    #bottomBar {
+        display: unset;
+    }
+
+    .panel {
+        display: none;
+        position: absolute;
+        top: 80px!important;
+        left: 0vw!important;
+        width: 100vw!important;
+        height: calc(100vh - 80px)!important;
+        z-index: 99999;
+    }
+}
