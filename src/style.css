@@ -35,6 +35,10 @@ main.only {
     height: unset;
 }
 
+main.noScroll {
+    height: calc(100% - 80px);
+}
+
 main.dash {
     position: relative;
     top: 80px;
