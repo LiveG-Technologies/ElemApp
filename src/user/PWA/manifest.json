@@ -1,0 +1,22 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "ElemApp App Maker",
+    "scope": "/src/user/index.html",
+    "display": "standalone",
+    "start_url": "https://elemapp.cf/src/user/index.html",
+    "short_name": "ElemApp",
+    "theme_color": "transparent",
+    "description": "The Progressive Web App maker that doesn't require a lot of coding.",
+    "orientation": "any",
+    "background_color": "none",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/src/logog.png",
+            "type": "image/png",
+            "sizes": "308x307"
+        }
+    ]
+}
