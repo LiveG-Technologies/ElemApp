@@ -9,12 +9,13 @@ function addApp() {
                 var newScreen = newApp.child("screens").push();
 
                 newScreen.set({
-                    name: "Home",
                     elements: {},
                     properties: {
-                        titleBar: true,
-                        titleText: "Home",
-                        backButton: false
+                        name: {
+                            type: "text",
+                            property: "Name",
+                            value: "Home"
+                        }
                     }
                 }).then(function() {
                     newApp.child("defaultScreen").set(newScreen.getKey());

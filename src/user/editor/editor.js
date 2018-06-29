@@ -10,21 +10,33 @@ var properties = [
     }
 ];
 
+function setTextProperty(key, value) {
+    firebase.database().ref(key).set(value);
+}
+
 function updateProperties() {
     var items;
     var panel = "";
 
-    if (properties == []) {items = screenProperties;} else {items = properties;}
+    var elementPath = ""
+    if (element != "") {elementPath = "/elements/" + element}
 
-    for (var i = 0; i < items.length; i++) {
-        if (items[i].type == "label") {
-            panel += `<p>` + items[i].value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `</p>`;
-        } else if (items[i].type == "text") {
-            panel += items[i].property.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `:<br><input value="` + items[i].value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `" class="property"></input>`;
-        }
-    }
+    firebase.database().ref("users/" + currentUid + "/apps/" + getURLParameter("app") + "/defaultScreen").once("value").then(function (screen) {
+        firebase.database().ref("users/" + currentUid + "/apps/" + getURLParameter("app") + "/screens/" + screen.val() + elementPath + "/properties").once("value").then(function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                var childKey = childSnapshot.key;
+                var childData = childSnapshot.val();
 
-    $("#properties").html(panel);
+                if (childData.type == "label") {
+                    panel += `<p>` + childData.value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `</p>`;
+                } else if (childData.type == "text") {
+                    panel += childData.property.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `:<br><input oninput="setTextProperty('users/' + currentUid + '/apps/' + getURLParameter('app') + '/screens/' + '` + screen.val() + `' + '` + elementPath + `' + '/properties/` + childKey + `/value', $(this).val());" value="` + childData.value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + `" class="property"></input>`;
+                }
+            });
+
+            $("#properties").html(panel);
+        });
+    });
 }
 
 var leftPanelShow = false;
@@ -85,4 +97,8 @@ setInterval(function() {
     }
 }, 100);
 
-updateProperties();
+
+firebase.auth().onAuthStateChanged(function(user) {
+    // Checks if user auth state has changed.
+    if (user) {updateProperties();}
+});
