@@ -60,8 +60,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                             <button class="bad" onclick="deleteApp('` + childKey + `');"><i class="fas fa-trash-alt"></i></button><button onclick="window.open('../get/index.html?app=` + childKey + `&dev=` + currentUid + `', '_blank');" class="secondary">View</button><button onclick="window.location.href = 'editor/index.html?app=` + childKey + `';">Edit</button>
                             </div>
                         </div>
-                `);
-            });
+                    `);
+                });
             }
         });
     }
