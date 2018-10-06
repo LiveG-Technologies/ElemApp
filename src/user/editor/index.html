@@ -9,9 +9,12 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
         <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+        <script src="touchpunch.min.js"></script>
         <script>
             // Initialize Firebase
             var config = {
@@ -25,7 +28,7 @@
             firebase.initializeApp(config);
         </script>
     </head>
-    <body>
+    <body class="editor">
         <header>
             <a href="../index.html"><img src="../../logow.png" class="headerLogo" /></a>
             <span class="headerItem">Editor</span>
@@ -47,7 +50,7 @@
         </div>
         <div id="alert"></div>
         <div id="panelClose" onclick="leftPanelShow = false; rightPanelShow = false; closeMenu();"><i class="fas fa-times"></i></div>
-        <main class="dash">
+        <main class="dash editor">
             <div class="center">
                 <div id="device">
                     <div id="app"></div>
@@ -57,7 +60,8 @@
         <div class="panel left">
             <div class="panelTitle">Toolbox</div>
             <div id="toolbox" class="panelContent">
-                Coming soon!
+                <div class="tool" data-tool="label">Label</div>
+                <div class="tool" data-tool="input">Text Input</div>
             </div>
         </div>
         <div class="panel right">

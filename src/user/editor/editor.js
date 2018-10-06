@@ -1,14 +1,17 @@
 // TODO: Implement an app structure for JSON that uses the model for dashboard.js.
 
 var element = "";
-var properties = [];
-var properties = [
-    {
-        type: "text",
-        property: "Name",
-        value: "Home"
+var elementProperties = {
+    label: {
+        
     }
-];
+};
+var elementData = {
+    label: `<span>Label</span>`,
+    input: `<input class="preview"></input>`
+};
+var objectCounter = 0;
+var defaultToolbox = $("#toolbox").html();
 
 function setTextProperty(key, value) {
     firebase.database().ref(key).set(value);
@@ -97,6 +100,49 @@ setInterval(function() {
     }
 }, 100);
 
+function setDraggables() {
+    $(".tool").draggable({
+        helper: "clone",
+        containment: "frame",
+        revert: "invalid",
+        connectToSortable: "#app",
+        scroll: false,
+        start: function(event, ui) {
+            leftPanelShow = false;
+            rightPanelShow = false;
+            closeMenu();
+        }
+    });
+
+    $(".appElement").draggable({
+        containment: "frame",
+        revert: "invalid",
+        connectToSortable: "#app",
+        scroll: false
+    });
+
+    $("#app").sortable({
+        accept: ".tool",
+        revert: true
+    }).droppable({
+        connectToSortable: "#toolbox",
+        drop: function(event, ui) {
+            $(ui.draggable).attr("class", "appElement");
+
+            $(ui.draggable).html(elementData[$(ui.draggable).attr("data-tool")])
+        }
+    });
+
+    $("#toolbox").droppable({
+        accept: ".appElement",
+        drop: function(event, ui) {
+            $(this).append(ui.draggable);
+            $(ui.draggable).remove();
+        }
+    });
+}
+
+setDraggables();
 
 firebase.auth().onAuthStateChanged(function(user) {
     // Checks if user auth state has changed.

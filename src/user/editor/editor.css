@@ -24,6 +24,16 @@
 
 .panel {
     display: unset;
+    overflow-x: none;
+}
+
+.tool, .appElement {
+    width: fit-content!important;
+    height: fit-content!important;
+}
+
+.preview {
+    pointer-events: none;
 }
 
 input.property {
